@@ -1,0 +1,4 @@
+/* Oculta el título original solo cuando JS haya aplicado la clase */
+.modal.custom-title-applied header.modal-header > h4.modal-title.text-break.flex-grow-1 {
+    display: none !important;
+}

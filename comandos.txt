@@ -1,0 +1,4 @@
+instrucción de Docker que combina varias herramientas para realizar una operación de mantenimiento 
+y actualización específica en una base de datos de Odoo que se ejecuta dentro de Docker.
+
+sudo docker compose run --rm --entrypoint "/usr/bin/odoo" web -d Dimesa -u all --stop-after-init 

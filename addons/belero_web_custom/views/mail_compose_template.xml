@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template inherit_id="mail.compose_message_wizard_form" name="Personalizar título modal correo">
+        <xpath expr="//header/h4[@class='modal-title text-break flex-grow-1']" position="replace">
+            <h4 class="modal-title text-break flex-grow-1">Enviar correo al cliente</h4>
+        </xpath>
+    </template>
+</odoo>

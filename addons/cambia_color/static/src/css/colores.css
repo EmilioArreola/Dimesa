@@ -1,0 +1,183 @@
+/* ======== 1. PALETA DE COLORES CENTRALIZADA ======== */
+/* Define tus colores aquí una sola vez */
+:root {
+    --mi-color-primario: #3c74b4; /* Azul Acero */
+    --mi-color-primario-hover: #0e4579; /* Azul Oscuro (para hovers) */
+    --mi-color-primario-borde: #135aaa; /* Borde para botones */
+    --mi-color-texto-claro: #ffffff;
+    --mi-color-texto-oscuro: #000000;
+    --mi-color-fondo-claro: #ffffff;
+}
+
+/* ======== 2. BARRA DE NAVEGACIÓN SUPERIOR (NAVBAR) ======== */
+.o_main_navbar {
+    background-color: var(--mi-color-primario) !important;
+    border-color: var(--mi-color-primario) !important;
+}
+
+/* Texto, iconos y botones en la navbar */
+.o_main_navbar a,
+.o_main_navbar button,
+.o_main_navbar .dropdown-toggle,
+.o_main_navbar .fa,
+.o_main_navbar .oi,
+.o_navbar_apps_menu button {
+    color: var(--mi-color-texto-claro) !important;
+    background-color: transparent !important;
+}
+
+/* Hover en la navbar (excepto desplegables, que se manejan más abajo) */
+.o_main_navbar a:hover,
+.o_main_navbar button:not(.dropdown-toggle):hover {
+    background-color: var(--mi-color-primario-hover) !important;
+    color: var(--mi-color-texto-claro) !important;
+}
+
+/* ======== 3. PANEL DE CONTROL (FRANJA BLANCA) ======== */
+/* * Esta es la franja con los títulos y botones (Ej. "Conversaciones / Nuevo").
+ * Se consolidaron 4 reglas duplicadas o conflictivas en esta única regla.
+ */
+.o_control_panel,
+.o_action_manager header {
+    background-color: var(--mi-color-fondo-claro) !important;
+    border-bottom: 1px solid #ccc !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+}
+
+/* Texto dentro del panel de control */
+.o_control_panel * {
+    color: var(--mi-color-texto-oscuro) !important;
+}
+
+/* ======== 4. MENÚ LATERAL (APLICACIONES) ======== */
+.o_app_switcher_background,
+.o_web_client .o_menu_apps,
+.o_web_client .o_menu_sections {
+    background-color: var(--mi-color-primario) !important;
+    color: var(--mi-color-texto-claro) !important;
+}
+
+/* Texto y enlaces del menú lateral */
+.o_menu_sections a,
+.o_menu_sections button {
+    color: var(--mi-color-texto-claro) !important;
+}
+
+.o_menu_sections a:hover,
+.o_menu_sections button:hover {
+    background-color: var(--mi-color-primario-hover) !important;
+    color: var(--mi-color-texto-claro) !important;
+}
+
+/* ======== 5. BOTONES Y DESPLEGABLES (DROPDOWNS) ======== */
+
+/* Botón primario (Ej. "Guardar", "Crear", "Nuevo") */
+.btn-primary {
+    background-color: var(--mi-color-primario) !important;
+    border-color: var(--mi-color-primario-borde) !important;
+    color: var(--mi-color-texto-claro) !important;
+}
+
+/* REGLA NUEVA: Asegura que iconos 'i' o 'fa' dentro sean blancos */
+.btn-primary i,
+.btn-primary .fa {
+    color: var(--mi-color-texto-claro) !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--mi-color-primario-hover) !important;
+    border-color: var(--mi-color-primario-hover) !important;
+    color: var(--mi-color-texto-claro) !important;
+}
+
+/* * NOTA: Las reglas para .o_list_button_add y .o-kanban-button-new 
+ * se eliminaron. Eran redundantes, ya que la regla .btn-primary 
+ * y la nueva regla de iconos se encargan de todo.
+ */
+
+/* Botones de desplegables (Ej. "Acción", "Imprimir") */
+.o-dropdown.dropdown-toggle,
+button.o-dropdown.dropdown-toggle {
+    background-color: var(--mi-color-primario) !important;
+    color: var(--mi-color-texto-claro) !important;
+}
+
+/* REGLA MODIFICADA: Asegura que CUALQUIER icono dentro sea blanco */
+.o-dropdown.dropdown-toggle i,
+.o-dropdown.dropdown-toggle .fa,
+button.o-dropdown.dropdown-toggle i,
+button.o-dropdown.dropdown-toggle .fa {
+    color: var(--mi-color-texto-claro) !important;
+}
+
+/* Hover/Focus de desplegables */
+.o-dropdown.dropdown-toggle:hover,
+.o-dropdown.dropdown-toggle:focus,
+button.o-dropdown.dropdown-toggle:hover,
+button.o-dropdown.dropdown-toggle:focus {
+    background-color: var(--mi-color-primario-hover) !important;
+    border-color: var(--mi-color-primario-hover) !important;
+    color: var(--mi-color-texto-claro) !important;
+}
+
+/* * NOTA: La regla específica para '.fa-cog' se eliminó 
+ * porque ahora está cubierta por la regla general de iconos.
+ */
+
+/* Elementos DENTRO del menú desplegable */
+.o-dropdown-item.dropdown-item.o-navigable.o_nav_entry {
+    background-color: var(--mi-color-primario) !important;
+    color: var(--mi-color-texto-claro) !important;
+}
+
+.o-dropdown-item.dropdown-item.o-navigable.o_nav_entry:hover,
+.o-dropdown-item.dropdown-item.o-navigable.o_nav_entry:focus {
+    background-color: var(--mi-color-primario-hover) !important;
+    color: var(--mi-color-texto-claro) !important;
+}
+
+/* ======== 6. GUIAS INTERACTIVAS (TOURS) ======== */
+/* Cambia el color de las burbujas de ayuda y los punteros */
+
+/* --- A. Burbujas de texto (lo que tenías antes) --- */
+.o_tour_pointer .o_tour_pointer_content,
+.o_tour_pointer.popover .popover-body {
+    background-color: var(--mi-color-primario) !important;
+    color: var(--mi-color-texto-claro) !important;
+}
+
+/* Quita bordes que puedan entrar en conflicto */
+.o_tour_pointer.popover {
+    border: none !important;
+}
+
+/* Cambiar el color de la flecha del popover para que coincida */
+.o_tour_pointer.bs-popover-auto[data-popper-placement^="bottom"] > .popover-arrow::before,
+.o_tour_pointer.bs-popover-bottom .popover-arrow::before {
+    border-bottom-color: var(--mi-color-primario) !important;
+}
+
+.o_tour_pointer.bs-popover-auto[data-popper-placement^="top"] > .popover-arrow::before,
+.o_tour_pointer.bs-popover-top .popover-arrow::before {
+    border-top-color: var(--mi-color-primario) !important;
+}
+
+.o_tour_pointer.bs-popover-auto[data-popper-placement^="left"] > .popover-arrow::before,
+.o_tour_pointer.bs-popover-start .popover-arrow::before {
+    border-left-color: var(--mi-color-primario) !important;
+}
+
+.o_tour_pointer.bs-popover-auto[data-popper-placement^="right"] > .popover-arrow::before,
+.o_tour_pointer.bs-popover-end .popover-arrow::before {
+    border-right-color: var(--mi-color-primario) !important;
+}
+
+/* --- B. Puntero "Tip" (Círculo pulsante) - ¡NUEVO! --- */
+/* Esta regla cambia el color del círculo principal Y de su animación pulsante */
+.o_tour_pointer_tip,
+.o_tour_pointer_tip::after {
+    background-color: var(--mi-color-primario) !important;
+}

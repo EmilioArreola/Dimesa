@@ -1,0 +1,45 @@
+/* Documentación */
+.o_user_menu a[data-menu="documentation"],
+.dropdown-menu a[href*="documentation"] {
+    display: none !important;
+}
+
+/* Soporte - Es el primer item después del menú de usuario */
+.o_user_menu .dropdown-menu > span.o-dropdown-item:first-child {
+    display: none !important;
+}
+
+/* Alternativa: Ocultar el primer span sin data-menu */
+.o_user_menu .dropdown-menu > span.o-dropdown-item:not([data-menu]) {
+    display: none !important;
+}
+/* 2. Ocultar Soporte (es una acción <span>) */
+.o_user_menu span.dropdown-item[data-menu="support"] {
+    display: none !important;
+}
+/* Mi cuenta de Odoo.com */
+.o-dropdown-item[data-menu="account"],
+span.o-dropdown-item[data-menu="account"],
+span[data-menu="account"] {
+    display: none !important;
+}
+
+/* ssssssss*/
+.o-dropdown-item[data-menu="settings"],
+span.o-dropdown-item[data-menu="settings"],
+span[data-menu="settings"] {
+    display: none !important;
+}
+/* Ocultar separadores huérfanos si quedan */
+.dropdown-divider:first-child,
+div[role="separator"]:first-child {
+    display: none !important;
+}
+
+.o-dropdown-item[data-menu="support"],
+span.o-dropdown-item[data-menu="support"],
+span[data-menu="support"] {
+    display: none !important;
+}
+
+

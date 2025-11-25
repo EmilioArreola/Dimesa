@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="brand_promotion_message_remove" inherit_id="web.brand_promotion_message" name="Website customizer" priority="20">
+        <xpath expr="//t[@t-set='final_message']" position="replace">
+            <t t-set="final_message">
+            </t>
+        </xpath>
+        <xpath expr="//t[@t-out]" position="replace">
+            <t t-out="final_message"/>
+        </xpath>
+    </template>
+
+<!--    <template id="brand_promotion_message_debranding_logo" inherit_id="web.brand_promotion_message" name="Website DeBranding" priority="20">-->
+<!--        <xpath expr="//t[@t-set='odoo_logo']" position="replace">-->
+
+<!--        </xpath>-->
+<!--    </template>-->
+
+<!--    <template id="brand_promotion_message_debranding_logo" inherit_id="website.brand_promotion" name="Website DeBranding" priority="20">-->
+<!--        <xpath expr="//t[@t-call='web.brand_promotion_message']" position="replace">-->
+<!--            <t t-set="_message"/>-->
+<!--            <t t-set="_utm_medium" t-valuef="website"/>-->
+<!--        </xpath>-->
+<!--    </template>-->
+</odoo>

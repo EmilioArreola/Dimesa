@@ -1,0 +1,148 @@
+/* ================================
+   VARIABLES PERSONALIZADAS
+================================ */
+:root, body {
+    /* --- TUS COLORES BASE --- */
+    --mi-color-primario: #3c74b4;           /* Azul Acero */
+    --mi-color-primario-hover: #0e4579;     /* Azul Oscuro */
+    --mi-color-primario-borde: #135aaa;     /* Azul borde */
+    --mi-color-texto-claro: #ffffff;
+    --mi-color-texto-oscuro: #000000;
+    --mi-color-fondo-claro: #ffffff;
+
+    /* --- ODOO 18 OVERRIDES (CRÍTICO) --- */
+    /* Sobrescribimos la paleta de colores por defecto */
+    --o-palette-default-light-1-o-color-1: var(--mi-color-primario) !important;
+    --o-palette-default-light-1-menu-bg: var(--mi-color-primario) !important;
+    --o-palette-default-light-1-navbar-bg: var(--mi-color-primario) !important;
+    
+    /* Variables de paleta generales */
+    --o-palette-default-light-1: var(--mi-color-primario) !important;
+    --o-palette-default-light-2: var(--mi-color-primario-hover) !important;
+
+    /* --- VARIABLES LEGACY (COMPATIBILIDAD) --- */
+    --o-brand-primary: var(--mi-color-primario) !important;
+    --o-brand-odoo: var(--mi-color-primario) !important;
+    --o-component-active-bg: var(--mi-color-primario-hover) !important;
+    --o-component-hover-bg: var(--mi-color-primario-hover) !important;
+}
+
+/* ================================
+   NAVBAR SUPERIOR
+================================ */
+.o_main_navbar {
+    background-color: var(--mi-color-primario) !important;
+    color: var(--mi-color-texto-claro) !important;
+}
+
+.o_main_navbar a,
+.o_main_navbar button {
+    color: var(--mi-color-texto-claro) !important;
+}
+
+/* Hover en Navbar */
+.o_main_navbar a:hover,
+.o_main_navbar button:hover {
+    background-color: var(--mi-color-primario-hover) !important;
+}
+
+/* ================================
+   SIDEBAR IZQUIERDO / MENÚS (CORREGIDO PARA ODOO 18)
+================================ */
+.o_menu_sections,
+.o_menu_sections .o-dropdown {
+    background-color: var(--mi-color-primario) !important;
+}
+
+/* AQUI ESTA EL FIX: Agregamos button y dropdown-toggle */
+.o_menu_sections .o_menu_entry,
+.o_menu_sections a,
+.o_menu_sections button,
+.o_menu_sections .dropdown-toggle {
+    color: var(--mi-color-texto-claro) !important;
+    background-color: transparent !important; /* Importante: quita el gris nativo del botón */
+    border: none !important;                  /* Quita bordes del botón */
+    box-shadow: none !important;              /* Quita sombras */
+}
+
+/* Hover para botones y enlaces */
+.o_menu_sections .o_menu_entry:hover,
+.o_menu_sections a:hover,
+.o_menu_sections button:hover,
+.o_menu_sections .dropdown-toggle:hover {
+    background-color: var(--mi-color-primario-hover) !important;
+}
+
+/* ================================
+   BOTONES
+================================ */
+.btn-primary, 
+.o_form_button_save, 
+.o_form_button_edit {
+    background-color: var(--mi-color-primario) !important;
+    border-color: var(--mi-color-primario-borde) !important;
+    color: var(--mi-color-texto-claro) !important;
+}
+
+.btn-primary:hover, 
+.o_form_button_save:hover, 
+.o_form_button_edit:hover {
+    background-color: var(--mi-color-primario-hover) !important;
+    border-color: var(--mi-color-primario-hover) !important;
+}
+
+/* ================================
+   CHECKBOX, INPUTS ACTIVOS
+================================ */
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--mi-color-primario) !important;
+    box-shadow: 0 0 5px var(--mi-color-primario) !important;
+}
+
+/* ================================
+   TABS
+================================ */
+.nav-tabs .nav-link.active {
+    background-color: var(--mi-color-primario) !important;
+    color: var(--mi-color-texto-claro) !important;
+    border-color: var(--mi-color-primario-borde) !important;
+}
+
+.nav-tabs .nav-link:hover {
+    background-color: var(--mi-color-primario-hover) !important;
+    color: var(--mi-color-texto-claro) !important;
+}
+
+/* ================================
+   BADGES / ETIQUETAS
+================================ */
+.badge-primary,
+.o_statusbar_status .o_arrow_button.o_arrow_button_primary {
+    background-color: var(--mi-color-primario) !important;
+    color: var(--mi-color-texto-claro) !important;
+}
+/* ================================
+   BOTÓN "NUEVO" (Sitio Web / Systray)
+================================ */
+/* Estado Normal */
+.o_main_navbar .o_new_content_container .o-website-btn-custo-secondary,
+.o_main_navbar .o_new_content_container > a {
+    background-color: var(--mi-color-primario) !important;
+    color: var(--mi-color-texto-claro) !important;
+    
+    /* CORRECCIÓN AQUÍ: */
+    border: none !important; /* Quitamos bordes generales */
+    /* Agregamos solo el borde izquierdo para "cerrar" el botón visualmente */
+    border-left: 1px solid var(--mi-color-primario-borde) !important; 
+}
+
+/* Estado Hover (Al pasar el cursor) */
+.o_main_navbar .o_new_content_container .o-website-btn-custo-secondary:hover,
+.o_main_navbar .o_new_content_container > a:hover {
+    background-color: var(--mi-color-primario-hover) !important;
+    color: var(--mi-color-texto-claro) !important;
+    /* Mantenemos la línea divisoria también en el hover */
+    border-left: 1px solid var(--mi-color-primario-borde) !important;
+}

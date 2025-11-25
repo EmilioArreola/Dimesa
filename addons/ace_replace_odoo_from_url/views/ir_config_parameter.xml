@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <record model="ir.ui.view" id="view_ir_config_inherit_form_view">
+    <field name="name">ace_replace_odoo_from_url.view_ir_config_inherit_form</field>
+    <field name="model">ir.config_parameter</field>
+    <field name="inherit_id" ref="base.view_ir_config_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="//form" position="attributes">
+        <attribute name="js_class">web_url_replace_view</attribute>
+      </xpath>
+    </field>
+  </record>
+
+</odoo>
