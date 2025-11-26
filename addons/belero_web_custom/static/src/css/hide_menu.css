@@ -42,4 +42,15 @@ span[data-menu="support"] {
     display: none !important;
 }
 
+/* Lo que no me gusta de lo anterior es que se quitran los titulos de todas las pantallas emergentes, diga Odoo o no */
+/* Oculta el título que normalmente dice "Odoo" */
+header.modal-header > h4.modal-title {
+    display: none !important;
+}
 
+/* (Opcional) Ajusta el header para que no quede espacio vacío */
+header.modal-header {
+    min-height: 0 !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+}
