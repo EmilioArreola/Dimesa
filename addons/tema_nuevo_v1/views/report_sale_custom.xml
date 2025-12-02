@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="remove_taxes_absolute" inherit_id="sale.report_saleorder_document">
+            
+            <xpath expr="//th[@name='th_taxes']" position="replace">
+            </xpath>
+
+            <xpath expr="//td[@name='td_taxes']" position="replace">
+            </xpath>
+
+        </template>
+    </data>
+</odoo>
