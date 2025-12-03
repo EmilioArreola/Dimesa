@@ -8,9 +8,10 @@
         Cuando un cliente navega por una categoría específica, solo verá las etiquetas
         asignadas a esa categoría (o etiquetas globales sin asignación).
     """,
-    'author': 'Maharba',
+    'author': 'Maharbaa',
     'depends': ['website_sale'],
     'data': [
+        'security/ir.model.access.csv',
         'views/product_tag_views.xml',
     ],
     'installable': True,

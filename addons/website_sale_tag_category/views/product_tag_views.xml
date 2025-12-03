@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="product.product_tag_form_view"/>
         <field name="arch" type="xml">
             <field name="name" position="after">
-                <field name="filter_group_name" placeholder="Ej: Tipo de Mueble, Estado, etc."/>
+                <field name="filter_group_id" placeholder="Ej: Tipo, Color..."/>
                 <field name="public_category_ids" widget="many2many_tags" options="{'no_create': True}"/>
             </field>
         </field>
