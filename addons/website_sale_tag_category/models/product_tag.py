@@ -32,10 +32,11 @@ class ProductTemplate(models.Model):
         Sobrescribimos _search para interceptar el dominio antes de llegar a la BD.
         """
         
-        # Verificamos si estamos en la tienda web
-        if request and request.httprequest and '/shop' in request.httprequest.path:
+        # --- CORRECCIÓN IMPORTANTE ---
+        # Verificamos la bandera 'is_viewing_shop' que pusimos en el controlador.
+        # Si NO existe o es False (como en la página de un producto), NO filtramos nada.
+        if request and getattr(request, 'is_viewing_shop', False):
             
-            # Captura robusta de etiquetas
             raw_tags = request.httprequest.args.getlist('tags')
             tag_ids = []
             for t_val in raw_tags:
@@ -45,8 +46,6 @@ class ProductTemplate(models.Model):
 
             if tag_ids:
                 # A. LIMPIEZA
-                # Eliminamos las reglas automáticas de Odoo.
-                # Buscamos tanto 'all_product_tag_ids' como 'product_tag_ids' por seguridad.
                 new_domain = []
                 for leaf in domain:
                     if isinstance(leaf, (list, tuple)) and len(leaf) > 0 and leaf[0] in ['all_product_tag_ids', 'product_tag_ids']:
@@ -69,8 +68,7 @@ class ProductTemplate(models.Model):
                         grouped_tags[key] = []
                     grouped_tags[key].append(tag.id)
 
-                # C. INYECCIÓN (CORREGIDA)
-                # Aquí estaba el error. Usamos 'product_tag_ids' que es el campo real.
+                # C. INYECCIÓN
                 for key, t_ids in grouped_tags.items():
                     domain.append(('product_tag_ids', 'in', t_ids))
 

@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <template id="remove_taxes_absolute" inherit_id="sale.report_saleorder_document">
+        <template id="remove_taxes_sale_order" inherit_id="sale.report_saleorder_document" priority="200">
             
-            <xpath expr="//th[@name='th_taxes']" position="replace">
+            <xpath expr="//th[@name='th_subtotal']/preceding-sibling::th[1]" position="replace">
             </xpath>
 
-            <xpath expr="//td[@name='td_taxes']" position="replace">
+            <xpath expr="//td[@name='td_subtotal']/preceding-sibling::td[1]" position="replace">
+            </xpath>
+
+        </template>
+
+        <template id="remove_taxes_invoice" inherit_id="account.report_invoice_document" priority="200">
+            
+            <xpath expr="//th[@name='th_subtotal']/preceding-sibling::th[1]" position="replace">
+            </xpath>
+
+            <xpath expr="//td[@name='td_subtotal']/preceding-sibling::td[1]" position="replace">
             </xpath>
 
         </template>
